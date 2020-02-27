@@ -1,0 +1,203 @@
+.nav{
+    padding: 2rem;
+    overflow: hidden;
+    
+    display: flex;
+    flex-direction: row;
+
+    @include responsive__mode(tablet-portrait){
+        padding: 2.5rem 3rem 0 3rem;
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+
+    @include responsive__mode(tablet-landscape){
+        padding: 2.5rem 3.5rem;
+    }
+
+    @include responsive__mode(desktop){
+        padding: 2.5rem 5rem;
+    }
+
+    @include responsive__mode(desktop-large){
+        padding: 2.5rem 7rem;
+    }
+
+    &__logo{
+        margin-right: auto;
+        align-self: center;
+        width: auto;
+        z-index: 2;
+
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__items{
+        display: none;
+
+        @include responsive__mode(tablet-portrait){
+            display: none;
+        }
+
+        @include responsive__mode(tablet-landscape){
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            margin-right: auto;
+            display: block;
+        }
+    }
+
+    &__item{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0.5rem;
+        
+        & a{
+            text-decoration: none;
+            color: $dark-blue;
+            transition: all 0.3s;
+
+            &:hover,
+            &:active{
+                color: $dark-grayish-blue;
+            }
+        }
+    }
+
+    &__cta{
+        display: none;
+
+        @include responsive__mode(tablet-portrait){
+            display: none;     
+        }
+
+        @include responsive__mode(tablet-landscape){
+            display: block;
+            border: none;
+            outline: none;
+            background: $bright-red;
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            color: $very-light-gray;
+            cursor: pointer;
+
+            box-shadow: 0 4px 6px 1px hsla(12, 88%, 59%, 0.5);
+            transition: all 0.3s;
+
+            &:link,
+            &:hover,
+            &:active{
+                background: $pale-red;
+            }
+        }
+    }
+}
+
+.menu{
+    cursor: pointer;
+    z-index: 2;
+
+    @include responsive__mode(tablet-portrait){
+        display: block;
+    }
+
+    @include responsive__mode(tablet-landscape){
+        display: none;
+    }
+}
+
+
+
+.mobile__nav{
+    background: $very-light-gray;
+    position: absolute;
+    top: 26%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+
+    z-index: 1;
+    list-style: none;
+    padding: 2rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    visibility: hidden;
+    opacity: 0;
+
+    &--item{
+        margin: 0.6rem 0;
+
+        & a{
+            text-decoration: none;
+            color: $dark-blue;
+            font-weight: bold;
+        }
+    }
+
+    @include responsive__mode(tablet-portrait){
+        top: 26%;
+        left: 70%;
+        transform: translate(-50%, -10%);
+        width: 50%;
+    }
+
+    @include responsive__mode(tablet-landscape){
+        display: none;
+    }
+}
+
+.backdrop{
+    background-image: linear-gradient(to bottom, $very-light-gray, $very-dark-blue);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+
+    transition: ease-in-out .5s;
+
+    @include responsive__mode(tablet-portrait){
+        display: block;
+    }
+
+    @include responsive__mode(tablet-landscape){
+        display: none;
+    }
+}
+
+.open__nav{
+    opacity: 1;
+    visibility: visible;
+
+    animation-name: slideDown;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.open__backdrop{
+    opacity: 0.7;
+    visibility: visible;
+}
+
+@keyframes slideDown {
+    0%{
+        top: 20%;
+    }
+
+    100%{
+        top: 26%;
+    }
+}

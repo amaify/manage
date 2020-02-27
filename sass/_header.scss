@@ -1,0 +1,165 @@
+.heading{
+    padding: 2rem 2rem 5rem 2rem;
+    position: relative;
+
+    @include responsive__mode(tablet-portrait){
+        padding: 2.5rem 3rem;
+    }
+
+    @include responsive__mode(tablet-landscape){
+        padding: 2.5rem 3.5rem;
+    }
+
+    @include responsive__mode(desktop){
+        padding: 2.5rem 5rem;
+    }
+
+    @include responsive__mode(desktop-large){
+        padding: 2.5rem 7rem;
+    }
+
+    &__wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+
+        @include responsive__mode(tablet-portrait){
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-basis: 100%;
+        }
+    }
+
+    &__description{
+        margin-right: 0;
+        align-content: center;
+        text-align: center;
+
+        overflow: hidden;
+
+        @include responsive__mode(tablet-portrait){
+            flex-basis: 40%;
+            margin-right: auto;
+            align-self: center;
+            text-align: left;
+        }
+
+        @include responsive__mode(tablet-landscape){
+            flex-basis: 45%;
+        }
+
+        @include responsive__mode(desktop){
+            flex-basis: 45%;
+        }
+    }
+
+    &__title{
+        font-size: 2.5rem;
+        color: $dark-blue;
+        text-align: center;
+
+        @include responsive__mode(tablet-portrait){
+            font-size: 1.8rem;
+            text-align: left;
+        }
+
+        @include responsive__mode(tablet-landscape){
+            font-size: 2.5rem;
+        }
+
+        @include responsive__mode(desktop){
+            font-size: 3.5rem;
+        }
+    }
+
+    &__text{
+        margin: 1rem 0 1.5rem 0;
+        font-size: 1.15rem;
+        text-align: center;
+        line-height: 1.7rem;
+        color: $dark-grayish-blue;
+
+        @include responsive__mode(tablet-portrait){
+            margin: 2rem 0 2rem 0;
+            width: 100%;
+            line-height: 1.5rem;
+            text-align: left;
+        }
+
+        @include responsive__mode(tablet-landscape){
+            margin: 2rem 0 2rem 0;
+            width: 90%;
+        }
+
+        @include responsive__mode(desktop){
+            margin: 2rem 0 2rem 0;
+            width: 80%;
+        }
+
+        @include responsive__mode(desktop-large){
+            margin: 2rem 0 2rem 0;
+            width: 60%;
+        }
+    }
+
+    &__images{
+        flex-basis: 45%;
+
+        @include responsive__mode(tablet-portrait){
+            flex-basis: 60%;
+        }
+
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &::after{
+        content: '';
+        background: $very-pale-red;
+        width: 90%;
+        height: 25%;
+        position: absolute;
+        bottom: 81%;
+        left: 18%;
+        border-radius: 100px;
+
+        transform: rotate(135deg) scale(1.2);
+        z-index: -1;
+        overflow: hidden;
+
+        @include responsive__mode(tablet-portrait){
+            width: 50%;
+            height: 35%;
+            position: absolute;
+            bottom: 88%;
+            left: 70%;
+
+            transform: rotate(135deg) scale(1.8);
+        }
+    }
+
+    &::before{
+        content: '';
+        background: $very-pale-red;
+        width: 30%;
+        height: 65%;
+        position: absolute;
+        top: 39%;
+        left: 98%;
+        border-radius: 100px;
+        transform: rotate(45deg) scale(1.1);
+
+        z-index: -1;
+
+        @include responsive__mode(tablet-portrait){
+            display: none;
+        }
+    }
+}
+
+.heads{
+    overflow: hidden;
+    position: relative;
+}

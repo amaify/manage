@@ -1,0 +1,33 @@
+// Primary Colors
+
+$bright-red: hsl(12, 88%, 59%);
+$dark-blue: hsl(228, 39%, 23%);
+
+$pale-red: hsl(12, 69%, 61%);
+
+// $pale-red: hsl(12, 58%, 70%);
+
+//Neutral Colors
+$dark-grayish-blue: hsl(227, 12%, 61%);
+$very-dark-blue: hsl(233, 12%, 13%);
+$very-pale-red: hsl(13, 100%, 96%);
+$very-light-gray: hsl(0, 0%, 98%);
+
+.get__started{
+    background: $bright-red;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    color: $very-light-gray;
+    cursor: pointer;
+
+    box-shadow: 0 4px 6px 1px hsla(12, 88%, 59%, 0.5);
+    transition: all 0.3s;
+
+    &:link,
+    &:hover,
+    &:active{
+        background: $pale-red;
+    }
+}
